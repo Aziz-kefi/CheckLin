@@ -1,0 +1,31 @@
+ALGORITHM P1S1
+VAR
+    set1 : ARRAY_OF INTEGER[50];
+    set2: ARRAY_OF INTEGER[50];
+    sum=0 : INTEGER;
+    i,j,r,r1 : INTEGER
+BEGIN
+ read(set1);
+ read(set2);
+FOR i FROM 0 TO set1.length-1 STEP 1  DO
+ FOR j FROM 0 TO set2.length -1 STEP 1  DO
+  IF (set1[i]=set2[j]) THEN
+            r:r+1;
+  END_IF   
+ END_FOR
+        IF (r=0) THEN
+            sum:sum+set1[i]
+        END_IF
+END_FOR
+FOR j FROM 0 TO set2.length-1 STEP 1  DO
+ FOR i FROM 0 TO set1.length -1 STEP 1  DO
+  IF (set2[j]=set1[i]) THEN
+            r1:r1+1;
+  END_IF   
+ END_FOR
+        IF (r1=0) THEN
+            sum:sum+set2[j];
+        END_IF
+END_FOR
+ write(sum);
+END
