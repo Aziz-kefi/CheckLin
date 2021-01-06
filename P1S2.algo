@@ -1,0 +1,26 @@
+ALGORITHM P1S2
+VAR
+    tab1 : ARRAY_OF INTEGER[50];
+    tab2 : ARRAY_OF INTEGER[50];
+    HTAB : HASH_TABLE<INTEGER,INTEGER>
+    i , s1 :INTEGER
+    sum=0 : INTEGER
+BEGIN
+ tabComm := tab1 + tab2;
+FOR i FROM 0 TO tabComm.length -1 STEP 1  DO
+ IF (htab.lookup(tabComm[i]) = TRUE) THEN
+     s1 := htab.get(tabComm[i]);
+      htab.insert(tabComm[i],s1+1);
+       ELSE
+           htab.insert(tabComm[i],1);
+       END_IF
+   END_FOR
+
+
+
+WHILE (htab.get(i)<2) DO
+    sum:= sum + tabComm[i];
+    i++;
+END_WHILE
+ write(sum);
+END
